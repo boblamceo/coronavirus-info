@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
 });
 
-const NewsCard = ({ title, content, date }) => {
+const NewsCard = ({ title, content, date, source }) => {
     const classes = useStyles();
 
     return (
@@ -32,9 +32,11 @@ const NewsCard = ({ title, content, date }) => {
                     title="Contemplative Reptile"
                 /> */}
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
-                        {title}
-                    </Typography>
+                    <a href={source}>
+                        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+                            {title}
+                        </Typography>
+                    </a>
                     <Typography style={{ textAlign: 'center' }} className={classes.roboto}>
                         {date.getDate()}-{date.getMonth() + 1}-{date.getFullYear()}
                     </Typography>

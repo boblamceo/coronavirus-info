@@ -27,7 +27,7 @@ const NewsPage: NextPage<Props> = ({newsData}) => {
 const date = moment(publishedAt)._d
     return (
       <a href={url} style={{   display: 'inline', textAlign: 'center' }} key={Math.floor(Math.random()*100000000000)}>
-            <NewsCard title={title} content={content} date={date}/>
+            <NewsCard title={title} content={content} date={date} source={name}/>
             <br />
       </a>
     )
