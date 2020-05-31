@@ -19,15 +19,16 @@ interface Props {
 }
 
 const NewsPage: NextPage<Props> = ({newsData}) => {
-  console.log(newsData)
+  console.log('newsData', newsData)
   
   return (  <Grid container style={{display: 'flex', justifyContent: 'space-evenly'}}>
   {newsData?.map(({ url, title, source: { name }, content, publishedAt }) => {
     // @ts-ignore
 const date = moment(publishedAt)._d
+console.log('name', name)
     return (
       <a href={url} style={{   display: 'inline', textAlign: 'center' }} key={Math.floor(Math.random()*100000000000)}>
-            <NewsCard title={title} content={content} date={date} source={name}/>
+            <NewsCard title={title} content={content} date={date} />
             <br />
       </a>
     )
